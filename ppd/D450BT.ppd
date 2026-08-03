@@ -1,0 +1,230 @@
+*PPD-Adobe: "4.3"
+*% ===================================================================
+*% D450BT thermal label printer - native driver
+*% Raster -> TSPL via rastertod450bt (universal binary)
+*% ===================================================================
+*FormatVersion: "4.3"
+*FileVersion: "2.0"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName: "D450BT.PPD"
+*Manufacturer: "D450"
+*Product: "(D450BT Printer)"
+*ModelName: "D450BT"
+*ShortNickName: "D450BT Label Printer"
+*NickName: "D450BT Label Printer (native TSPL)"
+*PSVersion: "(3010.000) 550"
+*LanguageLevel: "3"
+*ColorDevice: False
+*DefaultColorSpace: Gray
+*FileSystem: False
+*Throughput: "1"
+*LandscapeOrientation: Plus90
+*TTRasterizer: Type42
+*cupsVersion: 2.0
+*cupsManualCopies: True
+*cupsFilter: "application/vnd.cups-raster 0 rastertod450bt"
+
+*OpenUI *PageSize/Media Size: PickOne
+*OrderDependency: 10 AnySetup *PageSize
+*DefaultPageSize: w288h432
+*PageSize w108h72/1.50x1.00": "<</PageSize[108 72]/ImagingBBox null>>setpagedevice"
+*PageSize w144h72/2.00x1.00": "<</PageSize[144 72]/ImagingBBox null>>setpagedevice"
+*PageSize w144h90/2.00x1.25": "<</PageSize[144 90]/ImagingBBox null>>setpagedevice"
+*PageSize w144h144/2.00x2.00": "<</PageSize[144 144]/ImagingBBox null>>setpagedevice"
+*PageSize w144h288/2.00x4.00": "<</PageSize[144 288]/ImagingBBox null>>setpagedevice"
+*PageSize w162h90/2.25x1.25": "<</PageSize[162 90]/ImagingBBox null>>setpagedevice"
+*PageSize w216h144/3.00x2.00": "<</PageSize[216 144]/ImagingBBox null>>setpagedevice"
+*PageSize w216h216/3.00x3.00": "<</PageSize[216 216]/ImagingBBox null>>setpagedevice"
+*PageSize w288h144/4.00x2.00": "<</PageSize[288 144]/ImagingBBox null>>setpagedevice"
+*PageSize w288h216/4.00x3.00": "<</PageSize[288 216]/ImagingBBox null>>setpagedevice"
+*PageSize w288h288/4.00x4.00": "<</PageSize[288 288]/ImagingBBox null>>setpagedevice"
+*PageSize w288h360/4.00x5.00": "<</PageSize[288 360]/ImagingBBox null>>setpagedevice"
+*PageSize w288h432/4.00x6.00": "<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*PageSize w288h576/4.00x8.00": "<</PageSize[288 576]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion/Media Size: PickOne
+*OrderDependency: 10 AnySetup *PageRegion
+*DefaultPageRegion: w288h432
+*PageRegion w108h72/1.50x1.00": "<</PageSize[108 72]/ImagingBBox null>>setpagedevice"
+*PageRegion w144h72/2.00x1.00": "<</PageSize[144 72]/ImagingBBox null>>setpagedevice"
+*PageRegion w144h90/2.00x1.25": "<</PageSize[144 90]/ImagingBBox null>>setpagedevice"
+*PageRegion w144h144/2.00x2.00": "<</PageSize[144 144]/ImagingBBox null>>setpagedevice"
+*PageRegion w144h288/2.00x4.00": "<</PageSize[144 288]/ImagingBBox null>>setpagedevice"
+*PageRegion w162h90/2.25x1.25": "<</PageSize[162 90]/ImagingBBox null>>setpagedevice"
+*PageRegion w216h144/3.00x2.00": "<</PageSize[216 144]/ImagingBBox null>>setpagedevice"
+*PageRegion w216h216/3.00x3.00": "<</PageSize[216 216]/ImagingBBox null>>setpagedevice"
+*PageRegion w288h144/4.00x2.00": "<</PageSize[288 144]/ImagingBBox null>>setpagedevice"
+*PageRegion w288h216/4.00x3.00": "<</PageSize[288 216]/ImagingBBox null>>setpagedevice"
+*PageRegion w288h288/4.00x4.00": "<</PageSize[288 288]/ImagingBBox null>>setpagedevice"
+*PageRegion w288h360/4.00x5.00": "<</PageSize[288 360]/ImagingBBox null>>setpagedevice"
+*PageRegion w288h432/4.00x6.00": "<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*PageRegion w288h576/4.00x8.00": "<</PageSize[288 576]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: w288h432
+*ImageableArea w108h72: "0 0 108 72"
+*ImageableArea w144h72: "0 0 144 72"
+*ImageableArea w144h90: "0 0 144 90"
+*ImageableArea w144h144: "0 0 144 144"
+*ImageableArea w144h288: "0 0 144 288"
+*ImageableArea w162h90: "0 0 162 90"
+*ImageableArea w216h144: "0 0 216 144"
+*ImageableArea w216h216: "0 0 216 216"
+*ImageableArea w288h144: "0 0 288 144"
+*ImageableArea w288h216: "0 0 288 216"
+*ImageableArea w288h288: "0 0 288 288"
+*ImageableArea w288h360: "0 0 288 360"
+*ImageableArea w288h432: "0 0 288 432"
+*ImageableArea w288h576: "0 0 288 576"
+
+*DefaultPaperDimension: w288h432
+*PaperDimension w108h72: "108 72"
+*PaperDimension w144h72: "144 72"
+*PaperDimension w144h90: "144 90"
+*PaperDimension w144h144: "144 144"
+*PaperDimension w144h288: "144 288"
+*PaperDimension w162h90: "162 90"
+*PaperDimension w216h144: "216 144"
+*PaperDimension w216h216: "216 216"
+*PaperDimension w288h144: "288 144"
+*PaperDimension w288h216: "288 216"
+*PaperDimension w288h288: "288 288"
+*PaperDimension w288h360: "288 360"
+*PaperDimension w288h432: "288 432"
+*PaperDimension w288h576: "288 576"
+
+*MaxMediaWidth: "307"
+*MaxMediaHeight: "1080"
+*HWMargins: 0 0 0 0
+*CustomPageSize True: "pop pop pop <</PageSize[5 -2 roll]/ImagingBBox null>>setpagedevice"
+*ParamCustomPageSize Width: 1 points 10 307
+*ParamCustomPageSize Height: 2 points 10 1080
+*ParamCustomPageSize WidthOffset: 3 points 0 0
+*ParamCustomPageSize HeightOffset: 4 points 0 0
+*ParamCustomPageSize Orientation: 5 int 0 0
+
+*OpenUI *Resolution/Resolution: PickOne
+*OrderDependency: 10 AnySetup *Resolution
+*DefaultResolution: 203dpi
+*Resolution 203dpi/203 dpi: "<</HWResolution[203 203]/cupsBitsPerColor 8/cupsColorSpace 0>>setpagedevice"
+*CloseUI: *Resolution
+
+*OpenUI *zeMediaTracking/Media Tracking: PickOne
+*OrderDependency: 20 AnySetup *zeMediaTracking
+*DefaultzeMediaTracking: Web
+*zeMediaTracking Web/Gap Sensing: ""
+*zeMediaTracking Mark/Black Mark: ""
+*zeMediaTracking Continuous/Continuous: ""
+*CloseUI: *zeMediaTracking
+
+*OpenUI *GapHeight/Gap or Mark Height: PickOne
+*OrderDependency: 20 AnySetup *GapHeight
+*DefaultGapHeight: 3
+*GapHeight 2/2 mm: ""
+*GapHeight 3/3 mm: ""
+*GapHeight 4/4 mm: ""
+*GapHeight 5/5 mm: ""
+*GapHeight 6/6 mm: ""
+*CloseUI: *GapHeight
+
+*OpenUI *GapOffset/Gap or Mark Offset: PickOne
+*OrderDependency: 20 AnySetup *GapOffset
+*DefaultGapOffset: 0
+*GapOffset 0/0 mm: ""
+*GapOffset 1/1 mm: ""
+*GapOffset 2/2 mm: ""
+*GapOffset 3/3 mm: ""
+*CloseUI: *GapOffset
+
+*OpenUI *Darkness/Darkness: PickOne
+*OrderDependency: 20 AnySetup *Darkness
+*DefaultDarkness: 8
+*Darkness PrinterDefault/Printer default (no DENSITY sent): ""
+*Darkness 1/1 (Lightest): ""
+*Darkness 2/2: ""
+*Darkness 3/3: ""
+*Darkness 4/4: ""
+*Darkness 5/5: ""
+*Darkness 6/6: ""
+*Darkness 7/7: ""
+*Darkness 8/8 (Default): ""
+*Darkness 9/9: ""
+*Darkness 10/10: ""
+*Darkness 11/11: ""
+*Darkness 12/12: ""
+*Darkness 13/13: ""
+*Darkness 14/14: ""
+*Darkness 15/15 (Darkest): ""
+*CloseUI: *Darkness
+
+*OpenUI *zePrintRate/Print Speed: PickOne
+*OrderDependency: 20 AnySetup *zePrintRate
+*DefaultzePrintRate: 4
+*zePrintRate 2/2 ips: ""
+*zePrintRate 3/3 ips: ""
+*zePrintRate 4/4 ips (Default): ""
+*zePrintRate 5/5 ips: ""
+*zePrintRate 6/6 ips: ""
+*CloseUI: *zePrintRate
+
+*% Rendering mode. GrayScale = vendor Bayer 8x8 ordered dither: best for
+*% photos AND compresses far better than error diffusion (matters over
+*% Bluetooth - the printer chokes on large compressed streams).
+*OpenUI *ColorOption/Rendering: PickOne
+*OrderDependency: 20 AnySetup *ColorOption
+*DefaultColorOption: GrayScale
+*ColorOption GrayScale/Grayscale (ordered dither): ""
+*ColorOption None/Black and white (threshold): ""
+*ColorOption FloydSteinberg/Floyd-Steinberg (small labels only): ""
+*CloseUI: *ColorOption
+
+*OpenUI *DegreeOfGrayRecognition/Gray Recognition (GrayScale): PickOne
+*OrderDependency: 20 AnySetup *DegreeOfGrayRecognition
+*DefaultDegreeOfGrayRecognition: 4
+*DegreeOfGrayRecognition 1/1 (most black): ""
+*DegreeOfGrayRecognition 2/2: ""
+*DegreeOfGrayRecognition 3/3: ""
+*DegreeOfGrayRecognition 4/4 (Default): ""
+*DegreeOfGrayRecognition 5/5: ""
+*DegreeOfGrayRecognition 6/6: ""
+*DegreeOfGrayRecognition 7/7 (least black): ""
+*CloseUI: *DegreeOfGrayRecognition
+
+*OpenUI *BlackLevel/Threshold Level (B and W): PickOne
+*OrderDependency: 20 AnySetup *BlackLevel
+*DefaultBlackLevel: 2
+*BlackLevel 1/1 (192 - most black): ""
+*BlackLevel 2/2 (160 - Default): ""
+*BlackLevel 3/3 (144): ""
+*BlackLevel 4/4 (128): ""
+*BlackLevel 5/5 (112): ""
+*BlackLevel 6/6 (96): ""
+*BlackLevel 7/7 (64): ""
+*BlackLevel 8/8 (0 - least black): ""
+*CloseUI: *BlackLevel
+
+*OpenUI *Rotate/Rotate 180: PickOne
+*OrderDependency: 160 AnySetup *Rotate
+*DefaultRotate: 0
+*Rotate 0/Off: ""
+*Rotate 180/On: ""
+*CloseUI: *Rotate
+
+*% After PRINT, poll SSSGETPRINTING over the back channel until the
+*% printer reports :DONE (keeps the Bluetooth link open while printing;
+*% also surfaces the 7E 01/00 7E job ACK/NACK in the job log).
+*OpenUI *WaitForCompletion/Wait for print completion: PickOne
+*OrderDependency: 200 AnySetup *WaitForCompletion
+*DefaultWaitForCompletion: 60
+*WaitForCompletion 0/Off: ""
+*WaitForCompletion 15/15 s: ""
+*WaitForCompletion 60/60 s: ""
+*WaitForCompletion 180/180 s: ""
+*CloseUI: *WaitForCompletion
+
+*DefaultFont: Courier
+*Font Courier: Standard "(1.05)" Standard ROM
+*Font Courier-Bold: Standard "(1.05)" Standard ROM
+*% End of D450BT.ppd
