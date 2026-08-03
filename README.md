@@ -46,17 +46,17 @@ Options:
 
 ### Rendering modes
 
-| Mode | Algorithm | 4x6 stream size | Use for |
+| Mode | Algorithm | 4x6 photo stream | Use for |
 |---|---|---|---|
-| `GrayScale` (default) | Bayer 8×8 ordered dither (vendor-exact) | ~3-15 KB | everything, incl. photos |
+| `GrayScale` (default) | Bayer 8×8 ordered dither (vendor-exact) | ~25 KB | everything; fast transfers |
 | `None` | global threshold at 160 (vendor-exact) | ~2 KB | pure text/barcodes |
-| `FloydSteinberg` | error diffusion | **~30-100 KB** | small labels only |
+| `FloydSteinberg` | error diffusion | ~120 KB | best photo quality |
 
-The Bluetooth path chokes on large compressed streams (see below), so
-GrayScale's compressibility is not just cosmetic — it is what makes 4×6
-labels print reliably. FS noise can even make an LZO block *expand* past
-the 4096-byte chunk size (observed 4116 B), another suspected firmware
-killer.
+All three verified printing 4×6 over Bluetooth, including a 121 KB FS
+stream containing an LZO block expanded past the 4096-byte chunk size
+(4116 B) — so there is no firmware stream-size or chunk-size limit.
+GrayScale is default because its streams are ~5× smaller (faster
+transfers) and it matches the vendor byte-for-byte.
 
 ## Direct protocol testing (no CUPS)
 
@@ -146,16 +146,19 @@ flow control when supported and degrades to 50 ms/slice pacing when not.
 - Our filter polls `SSSGETPRINTING` after `PRINT` (option
   `WaitForCompletion`) and logs ACK/NACK frames to the job log.
 
-### Large-job failure over Bluetooth (history)
+### Large-job failure over Bluetooth (history — resolved)
 
-Symptom: jobs transmit fully but never print. Known-good: vendor 4×6
-(17.5 KB compressed, thresholded). Failing: our FS 4×6 (33 KB; also with
-blocks capped ≤2 KB). Small FS labels (3 KB) fine. Candidate causes, in
-likelihood order: total compressed-size ceiling (~20-24 KB input
-buffer?), LZO chunk expansion >4096 B, missing drain-based flow control.
-GrayScale rendering (~3 KB for a full 4×6) sidesteps all three; the
-instrumentation (drain stats + ACK/NACK + SSSGETPRINTING) will pinpoint
-the cause if it recurs.
+Symptom: jobs transmitted fully but never printed (33 KB FS 4×6 streams;
+small FS labels fine; vendor 17.5 KB jobs fine). Suspected firmware
+input-buffer ceilings and LZO chunk limits were both eventually
+**refuted**: a 121 KB FS stream containing a 4116 B expanded block
+prints fine. The real culprits were transport-level: the Labelife app's
+BLE session suppresses SPP printing while it is open, and a Bluetooth
+link flap during transfer silently discards buffered job data (the CUPS
+backend does not retransmit — the job still reports "completed"). Keep
+Labelife closed and don't touch the radio (e.g. blueutil) mid-transfer.
+The instrumentation (drain stats + ACK/NACK + SSSGETPRINTING) will
+pinpoint any recurrence.
 
 ## License
 
